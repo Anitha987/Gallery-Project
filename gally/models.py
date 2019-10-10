@@ -9,6 +9,8 @@ class Editor(models.Model):
     def __str__(self):
         return self.first_name
 
-class tags(models.Models)
-    name=models.CharField(max_length)
+class tags(models.Model):
+    name = models.CharField(max_length =30)
 
+    def __str__(self):
+        return self.name
