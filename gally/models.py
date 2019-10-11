@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(null=True)
+    image =  models.ImageField(upload_to = 'pictures/',null=True)
     name = models.CharField(max_length =30)
     description = models.CharField(max_length =60)
     # location = models.ForeignKey(Location)
@@ -11,7 +11,7 @@ class Image(models.Model):
     def save_image(self):
         self.save()
     def __str__(self):
-        return self.image
+        return self.name
 
 class Location(models.Model):
     location = models.CharField(max_length =30)
