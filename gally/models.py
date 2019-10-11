@@ -11,7 +11,7 @@ class Image(models.Model):
     def save_image(self):
         self.save()
     def __str__(self):
-        return self.image_name
+        return self.image
 
 class Location(models.Model):
     location = models.CharField(max_length =30)
