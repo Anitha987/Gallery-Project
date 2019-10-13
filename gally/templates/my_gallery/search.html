@@ -1,5 +1,15 @@
 {%extends 'my_gallery/base.html'%} 
 {% block content %}
+
+<script>
+    function myFunction() {
+      var copyText = document.getElementById("ani");
+      copyLink.select();
+      copyLink.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the link: " + copyLink.value);
+    }
+  </script>
 <div class="container">
 
   <div class="row">
@@ -33,6 +43,8 @@
               <img src="{{picture.image.url}}" class="img-responsive" alt="Image" width="50%">
             </div>
             <div class="modal-footer">
+              <input type="text" value="127.0.0.1:8000{{picture.image.url}}"id="ani">
+              <a onclick="myFunction(ani)"><button class="btn btn-secondary">Copy link</button></a>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
