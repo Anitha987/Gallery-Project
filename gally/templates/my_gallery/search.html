@@ -10,7 +10,7 @@
       alert("Copied the link: " + copyLink.value);
     }
   </script>
-<div class="container">
+<div class="container" >
 
   <div class="row">
     {% if pictures%}
@@ -26,7 +26,7 @@
     {% for picture in pictures %}
       <div class="col-md-4">
         <h2 class="text"> {{ picture.name }} </h2>
-        <img src="{{picture.image.url}}" class="img-responsive" alt="Image" width="100%"data-toggle="modal" data-target="#{{picture.id}}">
+        <img src="{{picture.image.url}}" class="img-responsive" alt="Image" width="300" height="300"data-toggle="modal" data-target="#{{picture.id}}">
   
      <!-- Modal -->
 
@@ -41,6 +41,10 @@
             </div>
             <div class="modal-body">
               <img src="{{picture.image.url}}" class="img-responsive" alt="Image" width="50%">
+              <br>
+              <h4><strong>{{picture.description}}</strong></h4>
+              <p>Location:{{picture.location}}</p>
+              <p>Category:{{picture.category}}</p>
             </div>
             <div class="modal-footer">
               <input type="text" value="127.0.0.1:8000{{picture.image.url}}"id="ani">

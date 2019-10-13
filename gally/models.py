@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Location(models.Model):
@@ -20,7 +21,8 @@ class Image(models.Model):
     description = models.CharField(max_length =60)
     location = models.ForeignKey(Location ,null=True)
     category = models.ForeignKey(Category,null=True)
-    
+ 
+
     def save_image(self):
         self.save()
     def __str__(self):
