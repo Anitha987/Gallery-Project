@@ -3,32 +3,31 @@
 {% block content %} 
 {{ block.super}}
 
-<div class="container">
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("ani");
+    copyLink.select();
+    copyLink.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the link: " + copyLink.value);
+  }
+</script>
 
+<div class="container">
+  <div class="row">
   <!-- Looping through gally   -->
   {% for pictures in gally %}
 
-  <div class="row">
+  
     <!-- displaying pictures in gally -->
-    <div class="col-md-12">
-      <h2 class="text-center"> {{ pictures.title }} </h2>
-    </div>
+    <div class="col-md-4 ">
+        <h2 class="text"> {{ pictures.name }} </h2>
+        <img src="{{pictures.image.url}}" class="img-responsive" alt="Image" width="100%" data-toggle="modal" data-target="#{{pictures.id}}">
+      </div>
+  
+     <!-- Modal -->
 
- 
-
-  <!--Display pictures in gally -->
-  <div class="col-md-12 ">
-    <img src="{{pictures.image.url}}" class="img-responsive" alt="Image" width="50%" data-toggle="modal" data-target="#{{pictures.id}}">
-  </div>
-
-</div>
-  {% empty %}
-  <div class="row">
-    <h2 class="text-center">Oops No pictures here!</h2>
-
-    <!-- Modal -->
-
-    <div class="modal fade" id="{{pictures.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal fade" id="{{pictures.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -41,14 +40,28 @@
               <img src="{{pictures.image.url}}" class="img-responsive" alt="Image" width="50%">
             </div>
             <div class="modal-footer">
+              <input type="text" value=127.0.0.1:8000{{pictures.image.url}} id="ani">
+              <a onclick="myFunction(ani)"><button class="btn btn-secondary">Copy link</button></a>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
       </div>
-  </div>
-  {% endfor %}
+ 
 
+ 
+
+  <!--Display pictures in gally -->
+  
+
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">Oops No pictures here!</h2>
+  </div>
+   
+  {% endfor %}
+</div>
 </div>
 
 {% endblock %}
