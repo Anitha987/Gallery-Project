@@ -1,26 +1,35 @@
-Quotes
+Gallery
 ###{Gallery-Project}
 
 ##Description 
-This project is all about Gallery ,where one can add his or her own quote.basing on the structure provided.
+This is a  personal gallery application where you display your photos for others to see.
 
-Development server
+
+##Development server
+
 Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automatically reload if you change any of the source files. 
 
 ##Setup/Installation Requirements
+
  My end user must have chrome must have visual code studio bootstrap ubuntu setup.
 
 ##Technologies Used 
+
 My project used HTML,CSS,bootstrap and python languages.
 
-Code scaffolding
-Run ng generate component component-name to generate a new component. You can also use ng generate directive|pipe|service|class|guard|interface|enum|module. ##Support and contact details If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com ##https://github.com/Anitha987/AnQuote-app.git
+##Code scaffolding
 
-Build
+To access my application a user must run python3.6 manage.py runserver.
+
+ ##Support and contact details
+  If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com ##https://github.com/Anitha987/AnQuote-app.git
+
+##Build
+
 Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
 
 Running unit tests
-Run ng test to execute the unit tests via Karma.
+python3.6 manage.py test gally to execute the unit tests via Karma.
 
 Running end-to-end tests
 Run ng e2e to execute the end-to-end test via Protractor.

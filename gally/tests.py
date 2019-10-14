@@ -22,7 +22,8 @@ class CategoryTestLocation(TestCase):
         self.animal=Category()
     def test_instance(self):    
         self.assertTrue(isinstance(self.animal,Category))            
-class 
+    
+    
 
 
 

@@ -8,6 +8,7 @@ import pyperclip
 def image(request):
     pictures = Image.objects.all()
     return render(request,'image.html',{'gally':pictures})
+
 def search_results(request):
 
     if 'picture' in request.GET and request.GET["picture"]:
@@ -21,9 +22,6 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'my_gallery/search.html',{"message":message})    
-def location (request):
-    place = Location.objects.all()
-    return render(request,'location.html')
 
-def    
-   
+       
+
