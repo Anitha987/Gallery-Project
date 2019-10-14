@@ -34,12 +34,12 @@
             <div class="modal-body">
               <img src="{{pictures.image.url}}" class="img-responsive" alt="Image" width="50%">
               <h5><strong>{{pictures.description}}</strong></h5>
-              <h5>Location{{pictures.location}}</h5>
+              <h5>Location:{{pictures.location}}</h5>
               <h5>Category:{{pictures.category}}</h5>
               <br>
             </div>
             <div class="modal-footer">
-              <input type="text" value="127.0.0.1:8000{{pictures.image.url}}"id="ani">
+              <input type="text" value="127.0.0.1:8000{{pictures.image.url}}"id="link">
                <button onclick="myFunction()"class="btn btn-secondary">Copy link</button> 
               
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -67,11 +67,11 @@
 <script>
   
     function myFunction() {
-      var copyText = document.getElementById("ani");
-      copyLink.select();
-      copyLink.setSelectionRange(0, 99999)
+      var copyText = document.getElementById("link");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
       document.execCommand("copy");
-      alert("Copied the link: " + copyLink.value);
+      alert("Copied the link: " + copyText.value);
     }
 </script>
 {% endblock %}
